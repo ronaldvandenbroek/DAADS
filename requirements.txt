@@ -1,16 +1,16 @@
-httptools
-python-dotenv
-uvloop
-watchgod
-websockets
-hyperopt
-torch
-jupyter
-pandas
-torch
-rrcf
-mmh3
-matplotlib==3.4.3
-numpy
 -e ./river
 -e ./IncrementalTorch
+mmh3==4.0.1
+rrcf==0.4.4
+
+# httptools==0.6.1
+# python-dotenv==1.0.0
+# uvloop==0.19.0
+# watchgod==0.8.2
+# websockets==12.0
+# hyperopt==0.2.7
+# torch==1.13.0
+# jupyter==1.0.0
+# pandas==1.3.2
+# matplotlib==3.7.0
+

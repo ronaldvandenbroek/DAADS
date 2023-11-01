@@ -4,11 +4,18 @@ import pathlib
 
 from evaluate import aggregate_dataframe, test_then_train
 
-N_PROCESSES = 3
+# N_PROCESSES = 3
+N_PROCESSES = 12
 DATASETS = ["covertype", "creditcard", "shuttle"]
-MODELS = ["AE", "AE", "DAE", "RRCF", "HST", "PW-AE", "xStream", "Kit-Net", "ILOF"]
-SEEDS = range(42, 52)
-SUBSAMPLE = 500_000
+# Double "AE" seems to cause a problem with a missing:
+# FileNotFoundError: [Errno 2] No such file or directory: '/home/ronald/river_data/CreditCard/creditcardfraud.zip'
+# Possible interfering process threads
+# MODELS = ["AE", "AE", "DAE", "RRCF", "HST", "PW-AE", "xStream", "Kit-Net", "ILOF"]
+MODELS = ["AE", "DAE", "RRCF", "HST", "PW-AE", "xStream", "Kit-Net", "ILOF"]
+# SEEDS = range(42, 52)
+SEEDS = range(42, 43)
+# SUBSAMPLE = 500_000
+SUBSAMPLE = 50_000
 SAVE_STR = "Benchmark"
 
 CONFIGS = {
