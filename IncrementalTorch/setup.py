@@ -24,8 +24,8 @@ REQUIRES_PYTHON = ">=3.6.0"
 base_packages = [
     "scikit-learn==1.0.2",
     "scikit-surprise==1.1.1",
-    "torch==1.10.2",
-    "vaex==4.8.0",
+    "torch==1.13.0",
+    "vaex==4.17.0",
     "pandas~=1.3.2",
     "numpy==1.22.2",
     "river~=0.10.1",
