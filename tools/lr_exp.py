@@ -6,7 +6,8 @@ import pandas as pd
 
 OPTIMIZER_FNS = ["hd-sgd", "adam", "sgd"]
 MODELS = ["AE", "PW-AE", "DAE"]
-SEEDS = range(42, 52)
+# SEEDS = range(42, 52)
+SEEDS = range(42, 43)
 LEARNING_RATES = np.geomspace(1e-3, 0.256, 9)
 DATASETS = ["covertype", "creditcard", "shuttle"]
 SUBSAMPLE = 50000
