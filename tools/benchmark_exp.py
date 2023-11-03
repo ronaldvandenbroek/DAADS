@@ -17,8 +17,8 @@ DATASETS = ["covertype", "creditcard", "shuttle"]
 # Running only new models to compare them with original paper
 MODELS = ["AE", "DAE", "PW-AE"]
 
-SEEDS = range(42, 52)
-# SEEDS = range(42, 43)
+SEEDS = range(2, 12)
+# SEEDS = range(42, 52)
 
 SUBSAMPLE = 500_000
 # SUBSAMPLE = 50_000
