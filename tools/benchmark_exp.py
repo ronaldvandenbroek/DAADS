@@ -9,15 +9,22 @@ N_PROCESSES = 12
 
 DATASETS = ["covertype", "creditcard", "shuttle"]
 
+# Original
 # MODELS = ["AE", "AE", "DAE", "RRCF", "HST", "PW-AE", "xStream", "Kit-Net", "ILOF"]
+
 # Double "AE" seems to cause a problem with a missing:
 # FileNotFoundError: [Errno 2] No such file or directory: '/home/ronald/river_data/CreditCard/creditcardfraud.zip'
 # Possible interfering process threads
 # MODELS = ["AE", "DAE", "RRCF", "HST", "PW-AE", "xStream", "Kit-Net", "ILOF"]
+
 # Running only new models to compare them with original paper
 MODELS = ["AE", "DAE", "PW-AE"]
 
-SEEDS = range(2, 12)
+# Running only the baselines (excluding RRCF due to long runtime)
+# RRCF on local hardware 6.5 hours per each of the 30 settings
+# MODELS = ["HST", "xStream", "Kit-Net", "ILOF"]
+
+SEEDS = range(22, 32)
 # SEEDS = range(42, 52)
 
 SUBSAMPLE = 500_000
