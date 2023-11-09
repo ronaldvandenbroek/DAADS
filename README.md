@@ -1,52 +1,79 @@
 # Detecting Anomalies with Autoencoders on Data Streams 
 
-This repository contains the results for our ECML 2022 submission "Detecting Anomalies with Autoencoders on Data Streams"
+This repository contains a replication of the results from "Detecting Anomalies with Autoencoders on Data Streams" (https://github.com/lucasczz/DAADS) by L. Cazzonelli and C. Kulbach.
 
 ## Installation
-```shell
-git clone https://github.com/lucasczz/DAADS.git
+### Setup Git
+```bash
+git clone https://github.com/ronaldvandenbroek/DAADS.git
 ```
-```shell
-python3 -m venv daads_env
-```
-```shell
-source daads_env/bin/activate
-```
-```shell
+### Setup Environment
+```bash
 cd DAADS
 ```
-```shell
+```bash
+conda create -n "daads_env" python=3.10
+```
+```bash
+conda activate daads_env_cython
+```
+### Setup Dependancies
+Install setuptools to enable cython to compile to C.
+```bash
+pip install --upgrade setuptools
+```
+```bash
+pip install cython==0.29.36
+``` 
+```bash
 pip install -r requirements.txt
 ```
-## Reproducing the results
-To run all experiments at once, run the `run_exps.sh` script located in `./scripts` by
-```shell
-./scripts/run_exps.sh
-```
-The experiment results are stored in `./results`.
+### Setup Path
+Change [USER] into your local username. Depending on the virtual enviroment used the path might differ.\
 
-## Reproducing the results step by step
-All experiment scripts are located in `./tools`.
+This path is valid for Miniconda version 23.9.0.
+
+```bash
+LD_LIBRARY_PATH=:/home/[USER]/miniconda3/envs/daads_env_cython/lib/python3.10/site-packages/nvidia/cublas/lib/$LD_LIBRARY_PATH
+```
+
+
+## Reproducing the results
+All experiment scripts are located in `./tools`.\
+The experiment results are stored in `./results`.\
+The notebooks to generate graphs and tables from the results are located in `./notebooks`.
 
 ### Evaluate all models
-```shell
+```bash
 python ./tools/benchmark_exp.py
 ```
 ### Run contamination experiment
-```shell
+```bash
 python ./tools/contamination_exp.py
 ```
 ### Run capacity experiment
-```shell
+```bash
 python ./tools/capacity_exp.py
 ```
 ### Run learning rate experiment
-```shell
+```bash
 python ./tools/lr_exp.py
 ```
+### Generate the HST baseline
+```bash
+python ./tools/hst_exp.py
+```
 ### Obtain anomaly scores
-```shell
+```bash
 python ./tools/scores_exp.py
+```
+### Generating replicated plots
+```
+./notebooks/plotting.ipynb
+```
+### Generating comparison plots
+```
+./notebooks/additional_tests.ipynb
 ```
 
 ## Access datasets 
