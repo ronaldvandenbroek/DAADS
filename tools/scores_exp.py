@@ -5,14 +5,22 @@ from evaluate import test_then_train
 from evaluate import save_array
 
 DATASETS = ["shuttle", "creditcard", "covertype"]
-# MODELS = ["AE-W", "AE", "DAE", "RRCF", "HST", "PW-AE", "xStream", "Kit-Net", "ILOF"]
-MODELS = ["AE-W", "AE", "DAE", "PW-AE"]
+MODELS = ["AE-W", "AE", "DAE", "RRCF", "HST", "PW-AE", "xStream", "Kit-Net", "ILOF"]
+# Running the proposed algorithms
+# MODELS = ["AE-W", "AE", "DAE", "PW-AE"]
+# Running select baselines
+# MODELS = ["RRCF", "HST", "xStream", "Kit-Net", "ILOF"]
+
 CONFIGS = {
     "AE-W": {"lr": 0.02, "latent_dim": 1.0, "dropout": 0},
     "AE": {"lr": 0.02, "latent_dim": 0.1, "dropout": 0},
     "DAE": {"lr": 0.02},
     "PW-AE": {"lr": 0.1},
     "HST": {"n_trees": 25, "height": 15},
+    "xStream": {}, # Needs to be added as otherwise the following error occures: KeyError: 'xStream'
+    "Kit-Net": {}, # Needs to be added as otherwise the following error occures: KeyError: 'Kit-Net'
+    "RRCF": {}, # Needs to be added as otherwise the following error occures: KeyError: 'RRCF'
+    "ILOF": {}, # Needs to be added as otherwise the following error occures: KeyError: 'ILOF'
 }
 SUBSAMPLE = 20_000
 
