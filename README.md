@@ -28,6 +28,16 @@ pip install cython==0.29.36
 ```bash
 pip install -r requirements.txt
 ```
+For the plotting.ipynb notebook LaTeX is needed, if this is not this can be obtained with the following commands: 
+```bash
+sudo apt-get install aptitude
+```
+```bash
+sudo aptitude install texlive-fonts-recommended texlive-fonts-extra
+```
+```bash
+pip install -r requirements.txt
+```
 ### Setup Path
 Change [USER] into your local username. Depending on the virtual enviroment used the path might differ.\
 
