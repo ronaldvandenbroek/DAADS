@@ -20,15 +20,15 @@ DATASETS = ["covertype", "creditcard", "shuttle"]
 # Running only new models to compare them with original paper
 MODELS = ["AE", "DAE", "PW-AE"]
 
-# Running only the baselines (excluding RRCF due to long runtime)
+# Running only the baselines (excluding RRCF due to long runtime, excluding ILOF due to freezing code)
 # RRCF on local hardware 6.5 hours per each of the 30 settings
-# MODELS = ["HST", "xStream", "Kit-Net", "ILOF"]
+# MODELS = ["HST", "xStream", "Kit-Net"]
 
-SEEDS = range(22, 32)
+# Original seed
 # SEEDS = range(42, 52)
+SEEDS = range(22, 32)
 
 SUBSAMPLE = 500_000
-# SUBSAMPLE = 50_000
 
 SAVE_STR = "Benchmark"
 

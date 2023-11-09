@@ -7,8 +7,7 @@ from evaluate import aggregate_dataframe, test_then_train
 DATASETS = ["covertype", "creditcard", "shuttle"]
 MODELS = ["AE", "DAE", "PW-AE"]
 N_TRIALS = 5
-# CONFIGS = [{"latent_dim": i, "lr": 0.02} for i in np.arange(0.1, 2.1, 0.1)]
-CONFIGS = [{"latent_dim": i, "lr": 0.02} for i in np.arange(0.2, 2.2, 0.2)]
+CONFIGS = [{"latent_dim": i, "lr": 0.02} for i in np.arange(0.1, 2.1, 0.1)]
 SUBSAMPLE = 50_000
 SAVE_STR = "Capacity"
 
@@ -23,7 +22,7 @@ metrics = [
     for model in MODELS
     for dataset in DATASETS
     for config in CONFIGS
-    for i in range(N_TRIALS) # Does not seem to use N_TRAILS?
+    for i in range(N_TRIALS)
 ]
 
 metrics_raw = pd.DataFrame(metrics)
