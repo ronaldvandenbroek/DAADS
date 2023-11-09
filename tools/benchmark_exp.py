@@ -23,14 +23,14 @@ DATASETS = ["covertype", "creditcard", "shuttle"]
 
 # Running only the baselines (excluding RRCF due to long runtime, excluding ILOF due to freezing code)
 # RRCF on local hardware 6.5 hours per each of the 30 settings
-# MODELS = ["HST", "xStream", "Kit-Net"]
+MODELS = ["HST", "xStream", "Kit-Net"]
 
 # Running full benchmark (excluding RRCF and ILOF)
-MODELS = ["AE", "DAE", "PW-AE", "HST", "xStream", "Kit-Net"]
+# MODELS = ["AE", "DAE", "PW-AE", "HST", "xStream", "Kit-Net"]
 
 # Original seed
-# SEEDS = range(42, 52)
-SEEDS = range(22, 32)
+SEEDS = range(42, 52)
+# SEEDS = range(22, 32)
 
 SUBSAMPLE = 500_000
 
