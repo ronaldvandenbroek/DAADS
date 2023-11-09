@@ -13,8 +13,10 @@ DATASETS = {
     "shuttle": Shuttle,
 }
 SUBSAMPLE = 50_000
+# Original ANOM_FRACTIONS
 # ANOM_FRACTIONS = np.arange(0.005, 0.1005, 0.005)
-ANOM_FRACTIONS = np.arange(0.05, 0.15, 0.05)
+# Reduced the amount of fractions to reduce runtime
+ANOM_FRACTIONS = np.arange(0.05, 0.15, 0.05) 
 N_TRIALS = 5
 CONFIGS = {"HST": {}, "DAE": {"lr": 0.02}, "PW-AE": {"lr": 0.1}}
 SAVE_STR = "Contamination"

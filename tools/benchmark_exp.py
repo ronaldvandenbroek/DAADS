@@ -5,6 +5,7 @@ import pathlib
 from evaluate import aggregate_dataframe, test_then_train
 
 # N_PROCESSES = 3
+# Increasing N_Processes to make use of more cores
 N_PROCESSES = 12
 
 DATASETS = ["covertype", "creditcard", "shuttle"]
@@ -18,11 +19,14 @@ DATASETS = ["covertype", "creditcard", "shuttle"]
 # MODELS = ["AE", "DAE", "RRCF", "HST", "PW-AE", "xStream", "Kit-Net", "ILOF"]
 
 # Running only new models to compare them with original paper
-MODELS = ["AE", "DAE", "PW-AE"]
+# MODELS = ["AE", "DAE", "PW-AE"]
 
 # Running only the baselines (excluding RRCF due to long runtime, excluding ILOF due to freezing code)
 # RRCF on local hardware 6.5 hours per each of the 30 settings
 # MODELS = ["HST", "xStream", "Kit-Net"]
+
+# Running full benchmark (excluding RRCF and ILOF)
+MODELS = ["AE", "DAE", "PW-AE", "HST", "xStream", "Kit-Net"]
 
 # Original seed
 # SEEDS = range(42, 52)
